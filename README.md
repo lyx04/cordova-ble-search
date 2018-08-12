@@ -4,7 +4,6 @@
 #### 鸣谢
 简书中的好书生:https://www.jianshu.com/u/d4b7d02dcf33
 与他的https://www.jianshu.com/p/ca7965c315b4
-
 #### 在plugin.xml中AndroidManifest.xml里需要添加如下权限
 ```
 <uses-permission android:name="android.permission.BLUETOOTH"/>
