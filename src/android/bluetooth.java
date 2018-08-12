@@ -17,14 +17,6 @@ import android.util.Log;
  */
 public class bluetooth extends CordovaPlugin {
     BroadcastReceiver mReceiver =null;
-    IntentFilter filterFound = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-    registerReceiver(mReceiver, filterFound);
-
-    IntentFilter filterStart = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_STARTED);
-    registerReceiver(mReceiver, filterStart);
-
-    IntentFilter filterFinish = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
-    registerReceiver(mReceiver, filterFinish);
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("coolMethod")) {
@@ -105,8 +97,9 @@ public class bluetooth extends CordovaPlugin {
     }
     private IntentFilter makeFilter() {
         IntentFilter filter = new IntentFilter();
-        filter.addAction(BluetoothDevice.ACTION_ACL_CONNECTED);
-        filter.addAction(BluetoothDevice.ACTION_ACL_DISCONNECTED);
+        filter.addAction(BluetoothAdapter.ACTION_FOUND);
+        filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_STARTED);
+        filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
         return filter;
     }
 
