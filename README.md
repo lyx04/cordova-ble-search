@@ -1,0 +1,2 @@
+# cordova-ble-search
+关于一台设备有多个蓝牙地址导致cordova蓝牙插件不能如期搜索到想要的蓝牙设备地址
